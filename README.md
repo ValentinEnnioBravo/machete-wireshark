@@ -20,7 +20,7 @@
 | MAC Origen | 6-11 | En hexadecimal XX:XX:XX:XX:XX:XX |
 | EtherType/Length | 12-13 | >1500 = EtherType, ≤1500 = Length |
 | Protocolo IP | 23 | 1=ICMP, 6=TCP, 17=UDP |
-| Time to Live (TTL) | 22 | Pasar a decimal |
+| Time to Live (TTL) | 22 | Pasar a decimal (cant. saltos) |
 | Flags Fragmentación | 20-21 | Ver tabla de [fragmentación IP](#fragmentación-ip) |
 | IP Origen | 26-29 | **YA están en decimal: A.B.C.D** |
 | IP Destino | 30-33 | **YA están en decimal: A.B.C.D** |
