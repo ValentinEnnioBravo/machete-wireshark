@@ -1,17 +1,6 @@
 # 🎯 MACHETE COMPLETO: ANÁLISIS DE TRAMAS ETHERNET
 
-## 📚 Índice
-1. [Identificación Rápida](#identificación-rápida)
-2. [Análisis por Capas](#análisis-por-capas)
-3. [Aclaraciones Importantes](#aclaraciones-importantes)
-4. [VLAN Tags](#vlan-tags)
-5. [Fragmentación IP](#fragmentación-ip)
-6. [Machete de Referencia Rápida](#machete-referencia)
-7. [Ejemplos Prácticos](#ejemplos-prácticos)
-
----
-
-## 🔍 Identificación Rápida {#identificación-rápida}
+## 🔍 Identificación Rápida
 
 ### Posiciones Fijas (SIN VLAN)
 | Campo | Bytes | Descripción |
@@ -21,7 +10,7 @@
 | EtherType/Length | 12-13 | >1500 = EtherType, ≤1500 = Length |
 | Protocolo IP | 23 | 1=ICMP, 6=TCP, 17=UDP |
 | Time to Live (TTL) | 22 | Pasar a decimal (cant. saltos) |
-| Flags Fragmentación | 20-21 | Ver tabla de [fragmentación IP](#fragmentación-ip) |
+| Flags Fragmentación | 20-21 | Ver tabla de fragmentación|
 | IP Origen | 26-29 | **YA están en decimal: A.B.C.D** |
 | IP Destino | 30-33 | **YA están en decimal: A.B.C.D** |
 | Puerto Origen | 34-35 | **2 bytes → convertir a decimal** |
@@ -63,8 +52,7 @@
 
 ---
 
-## 📊 Análisis por Capas {#análisis-por-capas}
-
+## 📊 Análisis por Capas
 ### Plantilla de Análisis
 ```
 ╔════════════════════════════════════════════════════════════╗
@@ -102,7 +90,7 @@
 
 ---
 
-## 🚨 Aclaraciones Importantes {#aclaraciones-importantes}
+## 🚨 Aclaraciones Importantes
 
 ### 1️⃣ Unicast/Multicast/Broadcast
 **REGLA:** Solo mira el **PRIMER BYTE** de la MAC DESTINO
@@ -141,7 +129,7 @@ Ejemplos:
 
 ---
 
-## 🏷️ VLAN Tags {#vlan-tags}
+## 🏷️ VLAN Tags
 
 ### Detección de VLAN
 **REGLA SIMPLE:** Bytes 12-13 = `81 00` → HAY VLAN
@@ -181,7 +169,7 @@ El garaje se **inserta** y todo se mueve hacia atrás.
 
 ---
 
-## 🚩 Fragmentación IP {#fragmentación-ip}
+## 🚩 Fragmentación IP
 
 ### Ubicación: Bytes 20-21 (Flags + Fragment Offset)
 
@@ -210,7 +198,7 @@ El garaje se **inserta** y todo se mueve hacia atrás.
 
 ---
 
-## 🎯 Machete de Referencia Rápida {#machete-referencia}
+## 🎯 Machete de Referencia Rápida
 
 ### Algoritmo de Identificación
 ```
@@ -254,7 +242,7 @@ El garaje se **inserta** y todo se mueve hacia atrás.
 
 ---
 
-## 📋 Ejemplos Prácticos {#ejemplos-prácticos}
+## 📋 Ejemplos Prácticos
 
 ### Ejemplo 1: Trama IPv4 TCP
 ```
