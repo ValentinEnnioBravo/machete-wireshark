@@ -11,8 +11,8 @@
 | Protocolo IP | 23 | 1=ICMP, 6=TCP, 17=UDP |
 | Time to Live (TTL) | 22 | Pasar a decimal (cant. saltos) |
 | Flags Fragmentación | 20-21 | Ver tabla de fragmentación|
-| IP Origen | 26-29 | **DECIMAL** |
-| IP Destino | 30-33 | **DECIMAL** |
+| IP Origen | 26-29 | **convertir a decimal** |
+| IP Destino | 30-33 | **convertir a decimal** |
 | Puerto Origen | 34-35 | **2 bytes → convertir a decimal** |
 | Puerto Destino | 36-37 | **2 bytes → convertir a decimal** |
 
